@@ -1,65 +1,100 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import CategoryCard from "@/components/CategoryCard";
+import styles from "./page.module.css";
+
+const treatments = [
+  {
+    title: "Hair Loss",
+    description: "Clinically proven treatments like Minoxidil and Finasteride to stop hair fall and regrow hair.",
+    icon: "💆‍♂️",
+    slug: "hair-loss"
+  },
+  {
+    title: "Skincare",
+    description: "Personalized formulas for acne, aging, and pigmentation under expert dermatology guidance.",
+    icon: "✨",
+    slug: "skincare"
+  },
+  {
+    title: "Weight Management",
+    description: "Modern GLP-1 backed approaches and metabolic plans to help you achieve a healthy weight safely.",
+    icon: "⚖️",
+    slug: "weight-loss"
+  },
+  {
+    title: "Women's Health & PCOS",
+    description: "Comprehensive care for PCOS, hormonal balance, and holistic wellness customized for Indian women.",
+    icon: "🌸",
+    slug: "womens-health"
+  },
+  {
+    title: "Ayurvedic Wellness",
+    description: "Time-tested natural supplements clinically backed for modern lifestyle issues.",
+    icon: "🌿",
+    slug: "ayurveda"
+  },
+  {
+    title: "Men's Health",
+    description: "Discreet, doctor-prescribed solutions for performance and vitality.",
+    icon: "💪",
+    slug: "mens-health"
+  }
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className={styles.main}>
+      <Navbar />
+      <Hero />
+      
+      <section id="treatments" className={styles.treatmentsSection}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2 className="title">Personalized Care for You</h2>
+            <p className="subtitle">Select a category to start your free doctor consultation.</p>
+          </div>
+          
+          <div className={styles.grid}>
+            {treatments.map((treatment) => (
+              <CategoryCard
+                key={treatment.slug}
+                title={treatment.title}
+                description={treatment.description}
+                icon={treatment.icon}
+                slug={treatment.slug}
+              />
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="how-it-works" className={styles.howItWorks}>
+        <div className="container">
+          <div className={styles.sectionHeader}>
+            <h2 className="title">How IndiMed Works</h2>
+            <p className="subtitle">Get expert care from the comfort of your home in 3 simple steps.</p>
+          </div>
+
+          <div className={styles.stepsGrid}>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>1</div>
+              <h3 className="title" style={{ fontSize: '1.5rem' }}>Take the Quiz</h3>
+              <p className="subtitle">Tell us about your symptoms, medical history, and goals in a quick online assessment.</p>
+            </div>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>2</div>
+              <h3 className="title" style={{ fontSize: '1.5rem' }}>Doctor Review</h3>
+              <p className="subtitle">A licensed Indian practitioner reviews your profile and prescribes a personalized treatment plan.</p>
+            </div>
+            <div className={styles.step}>
+              <div className={styles.stepNumber}>3</div>
+              <h3 className="title" style={{ fontSize: '1.5rem' }}>Free Delivery</h3>
+              <p className="subtitle">Your prescribed medications and wellness products are shipped directly to your door in discreet packaging.</p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }

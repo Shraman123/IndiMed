@@ -1,0 +1,107 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 1.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background gradient blobs */
+.blob1, .blob2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.blob1 {
+  background: var(--primary-light);
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(79,70,229,0.3) 0%, rgba(255,255,255,0) 70%);
+}
+
+.blob2 {
+  background: var(--secondary);
+  width: 400px;
+  height: 400px;
+  bottom: 100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, rgba(255,255,255,0) 70%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .blob1 { background: radial-gradient(circle, rgba(79,70,229,0.4) 0%, rgba(17,24,39,0) 70%); }
+  .blob2 { background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, rgba(17,24,39,0) 70%); }
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  letter-spacing: -0.03em;
+}
+
+.highlight {
+  color: var(--primary);
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.ctaWrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.primaryBtn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-glow);
+  transition: var(--transition);
+}
+
+.primaryBtn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(79, 70, 229, 0.5);
+}
+
+.secondaryBtn {
+  background: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 1rem 2rem;
+  border-radius: 99px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.secondaryBtn:hover {
+  background: var(--surface-hover);
+}

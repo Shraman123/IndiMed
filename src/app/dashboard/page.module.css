@@ -1,0 +1,130 @@
+.container {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prescriptionList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.prescriptionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+}
+
+.medicineName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.medicineDetails {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.statusBadge {
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Pay UI Mock */
+.payCta {
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  background-image: linear-gradient(to bottom right, var(--surface), var(--primary-light));
+}
+
+.payAmount {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 1rem 0;
+}
+
+.upiBtn {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 99px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+
+.upiBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.upiMethods {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
