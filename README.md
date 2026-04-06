@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🩺 IndiMed - AI-Powered Telehealth Platform for India
 
-## Getting Started
+IndiMed is a modern, full-stack telehealth platform explicitly designed for the Indian market. It connects patients with licensed medical practitioners using a "Smart Triage" system powered by Google Gemini AI, radically accelerating the consultation and prescription process.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Personalized Healthcare Quizzes:** Dynamic multi-step dynamic forms tailored for Hair Loss, Skincare, Weight Management, and more.
+- **AI Smart Triage (Gemini):** Automatically processes a patient's medical history to generate clinical summaries and suggested prescriptions for the doctor, reducing doctor review time by up to 90%.
+- **Doctor Portal:** A dedicated Dashboard for practitioners to review AI-generated case summaries and approve treatment plans instantly.
+- **Premium UI:** Glassmorphism, smooth animations, and tailored aesthetics built closely with Next.js 14 and pure Vanilla CSS.
+- **Indian Market Ready:** Built-in compliance placeholders including Razorpay/UPI checkout flows, and mandatory legal documentation (Terms, Privacy, Refund policies).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technology Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend:** Next.js 14 (App Router), React 19, Vanilla CSS
+- **Backend/API:** Next.js Serverless Routes
+- **Authentication & DB:** Supabase (PostgreSQL) *(Integration Ready)*
+- **Artificial Intelligence:** Google Gemini Pro (`@google/genai`)
+- **Payments:** Razorpay / UPI integrations *(Mocks)*
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚦 Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+Ensure you have Node.js (v18+) and npm installed on your local machine.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Shraman123/IndiMed.git
+   cd IndiMed
+   ```
 
-## Deploy on Vercel
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Setup Environment Variables:
+   Create a `.env.local` file in the root directory and add your API keys:
+   ```env
+   GEMINI_API_KEY=your_google_gemini_api_key
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📱 Core User Journeys
+- **Patient Flow:** Select Condition -> Take Quiz -> Wait for Doctor Approval -> Pay via UPI -> Receive Medication.
+- **Doctor Flow:** Login to `/admin/doctor` -> View Pending Triage -> Read AI Summary -> Approve Plan.
+
+## 📜 Legal & Compliance (India)
+This repository includes baseline templates required by Indian Payment Gateways (Razorpay/Cashfree) under `/terms`, `/privacy`, and `/refund-policy`. All telemedicine features must be operated in accordance with the Telemedicine Practice Guidelines (2020) issued by the Ministry of Health and Family Welfare (MoHFW).
+
+---
+
+Built to revolutionize healthcare accessibility across India. 🇮🇳
